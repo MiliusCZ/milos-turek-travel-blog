@@ -1,7 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
-import { Link } from 'react-router-dom';
 
 import { getUrlForPoints } from '../../utils/mapUtils';
 
@@ -10,12 +7,11 @@ const getMapUrl = (travelInfo) => {
         return {
             longitude: checkin.longitude,
             latitude: checkin.latitude
-        }
+        };
     });
 
-    console.log(travelInfo);
     return getUrlForPoints(points);
-}
+};
 
 const TravelPanel = ({ travelInfo }) => (
     <div>

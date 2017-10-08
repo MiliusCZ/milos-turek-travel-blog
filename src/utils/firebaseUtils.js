@@ -33,4 +33,4 @@ const snapshotToArray = snapshot => {
     });
 
     return returnArr;
-}
+};

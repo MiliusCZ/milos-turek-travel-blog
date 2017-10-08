@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import moment from 'moment';
 
 import TravelBlogLandingPage from './TravelBlogLandingPage';
 
@@ -19,7 +17,7 @@ class TravelBlogContainer extends React.Component {
         let travelsRef = firebaseConfig.database().ref('travels');
 
         travelsRef.on('value', snapshot => {
-            checkinsHelper(snapshot.val()).then((travels) => this.setState({ travels }))
+            checkinsHelper(snapshot.val()).then((travels) => this.setState({ travels }));
         });
     }
 
