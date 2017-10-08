@@ -25,6 +25,6 @@ const TravelBlogLandingPage = ({ travels }) => (
         <h1>Travel blog landing page</h1>
         {travels.map(travel => <TravelPanel key={travel.travelId} travelInfo={travel} />)}
     </div>
-)
+);
 
 export default TravelBlogLandingPage;
