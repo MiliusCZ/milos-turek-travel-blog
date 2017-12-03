@@ -1,0 +1,30 @@
+.image { 
+    position: relative; 
+    width: 100%; 
+    overflow: hidden;
+    
+    h3 { 
+        position: absolute; 
+        top: 50%;
+        left: 0; 
+        margin: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        text-align: center;
+        transform: translate(0, -50%);
+        width: 100%; 
+        color: white;
+        background: rgba(black, .3);
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+     }
+
+     img {
+         width: 100%;
+     }
+}
+
+ 

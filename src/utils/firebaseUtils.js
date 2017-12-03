@@ -14,12 +14,12 @@ export const checkinsHelper = (travels) => new Promise((resolve) => {
     travels.map((travel) => promises.push(getCheckinsForSpan(travel.dateFrom, travel.dateTo)));
 
     Promise.all(promises).then((values) => {
-        travels.map((travel, index) => {
+        const travelsWithCheckins = travels.map((travel, index) => {
             travel.checkins = snapshotToArray(values[index]);
             return travel;
         });
 
-        resolve(travels);
+        resolve(travelsWithCheckins);
     });
 });
 
