@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 import firebaseConfig from '../../utils/firebaseConfig';
+import { formatDateWithMonth } from '../../utils/dateUtils';
 
 import './timeline-container.scss';
 import emptyThumbnail from '../../assets/images/placeholder.png';
@@ -53,7 +54,7 @@ export default TimelineContainer;
 
 const TravelElement = ({ travel }) => (
     <VerticalTimelineElement
-        date={formatDate(travel.dateFrom, travel.dateTo)}
+        date={formatDateWithMonth(travel.dateFrom, travel.dateTo)}
         iconStyle={{
             background: 'rgb(33, 150, 243)',
             color: '#fff'
@@ -66,14 +67,3 @@ const TravelElement = ({ travel }) => (
     </VerticalTimelineElement>
 );
 
-const formatDate = (startDate, endDate) => {
-    const formattedDates = [startDate, endDate].map(date =>
-        moment(date).format('MMMM YYYY')
-    );
-
-    if (formattedDates[0] === formattedDates[1]) {
-        return formattedDates[0];
-    }
-
-    return formattedDates.join(' - ');
-};

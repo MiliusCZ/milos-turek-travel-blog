@@ -1,0 +1,12 @@
+.travelDetail {
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@media screen and (max-width: 1280px) {
+    .travelDetail {
+        width: 100%;
+    }
+}

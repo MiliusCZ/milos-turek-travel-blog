@@ -2,8 +2,7 @@ import React from 'react';
 
 import TravelBlogLandingPage from './TravelBlogLandingPage';
 
-import firebaseConfig from '../../utils/firebaseConfig';
-import { checkinsHelper } from '../../utils/firebaseUtils';
+import { getTravels } from '../../utils/firebaseUtils';
 
 class TravelBlogContainer extends React.Component {
     constructor(props) {
@@ -14,21 +13,12 @@ class TravelBlogContainer extends React.Component {
     }
 
     componentWillMount() {
-        let travelsRef = firebaseConfig.database().ref('travels');
-
-        travelsRef.on('value', snapshot => {
-            checkinsHelper(snapshot.val()).then((travels) => this.setState({ travels }));
-        });
+        getTravels().then(travels => this.setState({ travels }));
     }
 
     render() {
-        return (
-            <TravelBlogLandingPage travels={this.state.travels} />
-        );
+        return <TravelBlogLandingPage travels={this.state.travels} />;
     }
 }
 
 export default TravelBlogContainer;
-
-
-

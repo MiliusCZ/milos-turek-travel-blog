@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import ReactGA from 'react-ga';
 import { Router, Switch, Route } from 'react-router-dom';
 
+import '@babel/polyfill';
+
 import createHistory from 'history/createBrowserHistory';
 
 import EditorContainer from './app/editor/editor-container';
