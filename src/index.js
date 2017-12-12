@@ -5,7 +5,7 @@ import { Router, Switch, Route } from 'react-router-dom';
 
 import '@babel/polyfill';
 
-import createHistory from 'history/createBrowserHistory';
+import createHistory from 'history/createHashHistory';
 
 import EditorContainer from './app/editor/editor-container';
 import TimelineContainer from './app/timeline/timeline-container';
